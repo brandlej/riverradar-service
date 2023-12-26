@@ -25,4 +25,9 @@ export default () => ({
   database: {
     url: process.env.DATABASE_URL,
   },
+  externalProviders: {
+    usgs: {
+      url: process.env.USGS_URL,
+    },
+  },
 });
