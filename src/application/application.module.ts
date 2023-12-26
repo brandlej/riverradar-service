@@ -6,8 +6,7 @@ import { StateEntity } from 'src/domain/entities/state.entity';
 import { WaterReportEntity } from 'src/domain/entities/water-report.entity';
 
 /**
- * The Application layer is responsible for handling business logic. We use CQRS to separate responsibilities between
- * commands and queries. Commands are used to create and update entities, while queries are used to retrieve data.
+ * The Application layer is responsible for handling business logic.
  *
  * https://docs.nestjs.com/recipes/cqrs
  */
