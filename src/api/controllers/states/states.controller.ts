@@ -1,15 +1,17 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOkResponse, ApiTags, ApiParam } from '@nestjs/swagger';
+import { StateDto } from 'src/api/dtos/responses/state.dto';
+import { StatesService } from 'src/application/services/states/states.service';
 
 @ApiTags('states')
 @Controller('states')
 export class StatesController {
-  constructor() {}
+  constructor(private readonly statesService: StatesService) {}
 
   @Get('/')
-  @ApiOkResponse({ description: 'OK', type: Array<any> })
-  async getRivers(): Promise<Array<any>> {
-    return [];
+  @ApiOkResponse({ description: 'OK', type: Array<StateDto> })
+  async getStates(): Promise<Array<StateDto>> {
+    return await this.statesService.findAll();
   }
 
   @Get('/:abbr')
@@ -18,7 +20,7 @@ export class StatesController {
     type: String,
   })
   @ApiOkResponse({ description: 'OK', type: '<any>' })
-  async getRiver(@Param('abbr') abbr: string): Promise<any> {
-    return {};
+  async getState(@Param('abbr') abbr: string): Promise<any> {
+    return await this.statesService.findOne(abbr);
   }
 }

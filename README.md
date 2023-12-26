@@ -8,9 +8,15 @@ Service behind [riverradar-web](https://github.com/brandlej/riverradar-web). Int
 `npm install`
 2. Set environment variables
 `cp .env.sample .env`
-2. Start docker services
+3. Start docker services
 `npm run docker:up`
-3. Migrate database
-`npm run db:migrate`
 4. Run service
 `npm run start`
+
+### Setting up the Database
+Run the Migrations and Database Seeders:
+
+```bash
+npm run db:fresh
+```
+

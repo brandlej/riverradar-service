@@ -4,6 +4,8 @@ import { InfrastructureModule } from 'src/infrastructure/infrastructure.module';
 import { RiverEntity } from 'src/domain/entities/river.entity';
 import { StateEntity } from 'src/domain/entities/state.entity';
 import { WaterReportEntity } from 'src/domain/entities/water-report.entity';
+import { RiversService } from './services/rivers/rivers.service';
+import { StatesService } from './services/states/states.service';
 
 /**
  * The Application layer is responsible for handling business logic.
@@ -20,6 +22,7 @@ import { WaterReportEntity } from 'src/domain/entities/water-report.entity';
     MikroOrmModule.forFeature([RiverEntity, StateEntity, WaterReportEntity]),
     InfrastructureModule,
   ],
-  providers: [],
+  providers: [RiversService, StatesService],
+  exports: [RiversService, StatesService],
 })
 export class ApplicationModule {}
