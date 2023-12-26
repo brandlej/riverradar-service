@@ -6,8 +6,8 @@ export class RiverEntity extends BaseEntity {
   @Property()
   name: string;
 
-  @Property({ type: 'uuid' })
-  stateId: string;
+  @Property()
+  stateAbbr: string;
 
   @Property()
   description: string;

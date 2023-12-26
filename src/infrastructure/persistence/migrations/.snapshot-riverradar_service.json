@@ -46,14 +46,14 @@
           "nullable": false,
           "mappedType": "string"
         },
-        "state_id": {
-          "name": "state_id",
-          "type": "uuid",
+        "state_abbr": {
+          "name": "state_abbr",
+          "type": "varchar(255)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "mappedType": "uuid"
+          "mappedType": "string"
         },
         "description": {
           "name": "description",
