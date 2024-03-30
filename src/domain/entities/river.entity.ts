@@ -20,4 +20,7 @@ export class RiverEntity extends BaseEntity {
 
   @Property()
   access: string;
+
+  @Property()
+  siteCode: string;
 }

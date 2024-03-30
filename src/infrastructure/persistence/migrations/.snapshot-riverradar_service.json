@@ -90,6 +90,15 @@
           "primary": false,
           "nullable": false,
           "mappedType": "string"
+        },
+        "site_code": {
+          "name": "site_code",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "string"
         }
       },
       "name": "rivers",

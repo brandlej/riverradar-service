@@ -5,12 +5,13 @@ import { RiverEntity } from '../../../domain/entities/river.entity';
 export class RiverSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     em.create(RiverEntity, {
-      name: 'Cache La Poudre',
+      name: 'Cache LA Poudre River at Fort Collins',
       stateAbbr: 'CO',
       description: 'This is a river',
       lat: '123',
       long: '123',
       access: 'asdf',
+      siteCode: '06752260',
     });
   }
 }

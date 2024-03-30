@@ -38,6 +38,12 @@ export class RiverDto {
   })
   long: string;
 
+  @ApiProperty({
+    description: 'The site code',
+    type: String,
+  })
+  siteCode: string;
+
   static From(river: RiverEntity): RiverDto {
     const riverDto = new RiverDto();
     riverDto.uuid = river.uuid;
@@ -46,6 +52,7 @@ export class RiverDto {
     riverDto.access = river.access;
     riverDto.lat = river.lat;
     riverDto.long = river.long;
+    riverDto.siteCode = river.siteCode;
 
     return riverDto;
   }
@@ -60,6 +67,8 @@ export class RiverDto {
       riverDto.access = river.access;
       riverDto.lat = river.lat;
       riverDto.long = river.long;
+      riverDto.siteCode = river.siteCode;
+
       riverDtoList.push(riverDto);
     }
 

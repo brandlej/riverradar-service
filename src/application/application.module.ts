@@ -6,6 +6,9 @@ import { StateEntity } from 'src/domain/entities/state.entity';
 import { WaterReportEntity } from 'src/domain/entities/water-report.entity';
 import { RiversService } from './services/rivers/rivers.service';
 import { StatesService } from './services/states/states.service';
+import { RiverDataService } from './services/riverdata/river-data.service';
+import { UsgsWaterService } from './services/usgs-water/usgs-water.service';
+import { HttpModule } from '@nestjs/axios';
 
 /**
  * The Application layer is responsible for handling business logic.
@@ -21,8 +24,9 @@ import { StatesService } from './services/states/states.service';
      */
     MikroOrmModule.forFeature([RiverEntity, StateEntity, WaterReportEntity]),
     InfrastructureModule,
+    HttpModule,
   ],
-  providers: [RiversService, StatesService],
-  exports: [RiversService, StatesService],
+  providers: [RiversService, StatesService, RiverDataService, UsgsWaterService],
+  exports: [RiversService, StatesService, RiverDataService, UsgsWaterService],
 })
 export class ApplicationModule {}
